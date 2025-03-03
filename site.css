@@ -39,7 +39,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Star Jedi", sans-serif;
+  /* font-family: "Star Jedi", sans-serif; */
   color: var(--light2);
 }
 
