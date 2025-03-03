@@ -10,23 +10,43 @@ p {
   padding: 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Star+Jedi&display=swap');
+
 :root {
   font-family: Arial, Helvetica, sans-serif;
-  --dark1: black;
-  --light1: white;
-  --dark2: darkblue;
-  --light2: lightblue;
-  background-color: var(--light1);
-  color: var(--dark1);
+  --dark1: #000000;
+  --light1: #ffffff;
+  --dark2: #1a1a1a;
+  --light2: #ffcc00;
+  --accent1: #ff0000;
+  background-color: var(--dark1);
+  color: var(--light1);
+}
+
+body {
+  background-image: url('https://example.com/star-wars-background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Star Jedi', sans-serif;
+  color: var(--light2);
 }
 
 button {
   background-color: var(--light2);
-  color: var(--dark2);
+  color: var(--dark1);
   font-weight: bold;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid var(--dark2);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: var(--accent1);
+  color: var(--light1);
 }
 
 input {
@@ -36,19 +56,23 @@ input {
   font-size: 1.1em;
   line-height: 1.5em;
   border: none;
-  border-bottom: 2px solid var(--dark2);
+  border-bottom: 2px solid var(--light2);
   outline: none;
   margin: 5px;
+  background-color: var(--dark2);
+  color: var(--light1);
 }
 
 label {
   font-weight: bold;
   font-size: 1.1em;
+  color: var(--light2);
 }
 
 .small {
   font-size: small;
   font-weight: normal;
+  color: var(--light2);
 }
 
 /* Characters */
@@ -62,9 +86,9 @@ label {
 #charactersList div {
   padding: 10px;
   margin: 10px;
-  border: 1px solid var(--dark2);
+  border: 1px solid var(--light2);
   border-radius: 5px;
-  color: var(--dark2);
+  color: var(--dark1);
   background-color: var(--light2);
   font-weight: bold;
 }
@@ -84,7 +108,7 @@ h1#name {
 #generalInfo p {
   padding: 20px;
   margin: 10px;
-  color: var(--dark2);
+  color: var(--dark1);
   background-color: var(--light2);
 }
 
@@ -112,12 +136,19 @@ section#films a {
   display: inline-block;
   text-decoration: none;
   font-size: 1.1em;
-
   background-color: var(--light2);
-  color: var(--dark2);
+  color: var(--dark1);
   font-weight: bold;
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
   border: 1px solid var(--dark2);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+section#planets a:hover,
+section#characters a:hover,
+section#films a:hover {
+  background-color: var(--accent1);
+  color: var(--light1);
 }
