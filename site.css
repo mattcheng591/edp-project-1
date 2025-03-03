@@ -57,7 +57,11 @@ button:hover {
   background-color: var(--accent1);
   color: var(--light1);
 }
-
+#charactersList div:hover {
+  background-color: var(--accent1);
+  color: var(--light1);
+  cursor: pointer;
+}
 input {
   display: block;
   width: 95%;
