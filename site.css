@@ -10,7 +10,7 @@ p {
   padding: 0;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Star+Jedi&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Star+Jedi&display=swap");
 
 :root {
   font-family: Arial, Helvetica, sans-serif;
@@ -21,16 +21,25 @@ p {
   --accent1: #ff0000;
   background-color: var(--dark1);
   color: var(--light1);
+  font-family: "CustomFont";
 }
 
 body {
-  background-image: url('https://example.com/star-wars-background.jpg');
+  background-image: url("https://example.com/star-wars-background.jpg");
   background-size: cover;
   background-attachment: fixed;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Star Jedi', sans-serif;
+@font-face {
+  font-family: "CustomFont";
+  src: url("Starjedi.ttf") format("truetype");
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Star Jedi", sans-serif;
   color: var(--light2);
 }
 
