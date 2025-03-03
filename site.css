@@ -64,14 +64,14 @@ button:hover {
 }
 input {
   display: block;
-  width: 95%;
+  width: 50%; /* Adjust width as needed */
   font-weight: bold;
   font-size: 1.1em;
   line-height: 1.5em;
   border: none;
   border-bottom: 2px solid var(--light2);
   outline: none;
-  margin: 5px;
+  margin: 10px 0; /* Adjust margin for better spacing */
   background-color: var(--dark2);
   color: var(--light1);
 }
@@ -90,6 +90,10 @@ label {
 
 .heading {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Characters */
