@@ -61,6 +61,8 @@ button:hover {
   background-color: var(--accent1);
   color: var(--light1);
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border: 1px solid var(--dark2);
 }
 input {
   display: block;
