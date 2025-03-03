@@ -11,9 +11,10 @@ p {
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Star+Jedi&display=swap");
+@import url("https://fonts.cdnfonts.com/css/star-wars");
 
 :root {
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
   --dark1: #000000;
   --light1: #ffffff;
   --dark2: #1a1a1a;
@@ -21,7 +22,9 @@ p {
   --accent1: #ff0000;
   background-color: var(--dark1);
   color: var(--light1);
-  font-family: "CustomFont";
+  /* font-family: "CustomFont"; */
+  /* font-family: 'Star Wars', sans-serif; */
+  font-family: "Star Wars", sans-serif;
 }
 
 body {
@@ -30,16 +33,18 @@ body {
   background-attachment: fixed;
 }
 
-@font-face {
+/* @font-face {
   font-family: "CustomFont";
   src: url("Starjedi.ttf") format("truetype");
-}
+} */
 h1,
 h2,
 h3,
 h4,
 h5 {
   /* font-family: "Star Jedi", sans-serif; */
+  font-family: "Star Wars", sans-serif;
+
   color: var(--light2);
 }
 
