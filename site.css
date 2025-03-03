@@ -84,6 +84,10 @@ label {
   color: var(--light2);
 }
 
+.heading {
+  text-align: center;
+}
+
 /* Characters */
 #charactersList {
   display: flex;
