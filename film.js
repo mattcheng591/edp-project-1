@@ -7,6 +7,7 @@ let planetDiv;
 let producerSpan;
 let directorSpan;
 let releaseDateSpan;
+let crawlSpan;
 
 const baseUrl = `http://localhost:9001/api`;
 
@@ -22,6 +23,7 @@ addEventListener("DOMContentLoaded", () => {
   releaseDateSpan = document.querySelector("span#releaseDate");
   charactersUl = document.querySelector("#characters>ul");
   planetsUl = document.querySelector("#planets>ul");
+  crawlSpan = document.querySelector("span#crawl");
   const sp = new URLSearchParams(window.location.search);
   const id = sp.get("id");
   getFilm(id);
@@ -92,6 +94,7 @@ const renderFilm = (film) => {
   producerSpan.textContent = film?.producer;
   directorSpan.textContent = film?.director;
   releaseDateSpan.textContent = film?.release_date;
+  crawlSpan.textContent = film?.opening_crawl;
   const planetsLis = film?.planets?.map(
     (planet) => `<li><a href="planet.html?id=${planet.id}">${planet.name}</li>`
   );

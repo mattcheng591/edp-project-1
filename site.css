@@ -10,45 +10,103 @@ p {
   padding: 0;
 }
 
+html,
+body {
+  cursor: url("lightsaber.png"), default;
+  /* just change the cursor.ico path to your location */
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Star+Jedi&display=swap");
+@import url("https://fonts.cdnfonts.com/css/star-wars");
+
 :root {
-  font-family: Arial, Helvetica, sans-serif;
-  --dark1: black;
-  --light1: white;
-  --dark2: darkblue;
-  --light2: lightblue;
-  background-color: var(--light1);
-  color: var(--dark1);
+  /* font-family: Arial, Helvetica, sans-serif; */
+  --dark1: #000000;
+  --light1: #ffffff;
+  --dark2: #1a1a1a;
+  --light2: #ffcc00;
+  --accent1: #ff0000;
+  background-color: var(--dark1);
+  color: var(--light1);
+  /* font-family: "CustomFont"; */
+  /* font-family: 'Star Wars', sans-serif; */
+  font-family: "Star Wars", sans-serif;
+}
+
+body {
+  background-image: url("https://example.com/star-wars-background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* @font-face {
+  font-family: "CustomFont";
+  src: url("Starjedi.ttf") format("truetype");
+} */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  /* font-family: "Star Jedi", sans-serif; */
+  font-family: "Star Wars", sans-serif;
+
+  color: var(--light2);
 }
 
 button {
   background-color: var(--light2);
-  color: var(--dark2);
+  color: var(--dark1);
   font-weight: bold;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid var(--dark2);
+  transition: background-color 0.3s, color 0.3s;
 }
 
+button:hover {
+  background-color: var(--accent1);
+  color: var(--light1);
+}
+#charactersList div:hover {
+  background-color: var(--accent1);
+  color: var(--light1);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border: 1px solid var(--dark2);
+}
 input {
   display: block;
-  width: 95%;
+  width: 50%; /* Adjust width as needed */
   font-weight: bold;
   font-size: 1.1em;
   line-height: 1.5em;
   border: none;
-  border-bottom: 2px solid var(--dark2);
+  border-bottom: 2px solid var(--light2);
   outline: none;
-  margin: 5px;
+  margin: 10px 0; /* Adjust margin for better spacing */
+  background-color: var(--dark2);
+  color: var(--light1);
 }
 
 label {
   font-weight: bold;
   font-size: 1.1em;
+  color: var(--light2);
 }
 
 .small {
   font-size: small;
   font-weight: normal;
+  color: var(--light2);
+}
+
+.heading {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Characters */
@@ -62,9 +120,9 @@ label {
 #charactersList div {
   padding: 10px;
   margin: 10px;
-  border: 1px solid var(--dark2);
+  border: 1px solid var(--light2);
   border-radius: 5px;
-  color: var(--dark2);
+  color: var(--dark1);
   background-color: var(--light2);
   font-weight: bold;
 }
@@ -84,7 +142,7 @@ h1#name {
 #generalInfo p {
   padding: 20px;
   margin: 10px;
-  color: var(--dark2);
+  color: var(--dark1);
   background-color: var(--light2);
 }
 
@@ -112,12 +170,125 @@ section#films a {
   display: inline-block;
   text-decoration: none;
   font-size: 1.1em;
-
   background-color: var(--light2);
-  color: var(--dark2);
+  color: var(--dark1);
   font-weight: bold;
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
   border: 1px solid var(--dark2);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+section#planets a:hover,
+section#characters a:hover,
+section#films a:hover {
+  background-color: var(--accent1);
+  color: var(--light1);
+}
+
+.search-container {
+  background: #000; /* Black background */
+  height: 30px;
+  border-radius: 30px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.8s;
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3),
+    -4px -4px 6px 0 rgba(255, 255, 136, 0.2),
+    /* Yellow-ish shadow for Star Wars feel */ inset -4px -4px 6px 0
+      rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.search-container:hover > .search-input {
+  width: 400px;
+}
+
+.search-container .search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 0px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.8s;
+  color: #f9f600; /* Yellow text color for the input */
+}
+
+.search-container .search-btn .fas {
+  color: #f9f600; /* Yellow icon */
+}
+
+@keyframes hoverShake {
+  0% {
+    transform: skew(0deg, 0deg);
+  }
+  25% {
+    transform: skew(5deg, 5deg);
+  }
+  75% {
+    transform: skew(-5deg, -5deg);
+  }
+  100% {
+    transform: skew(0deg, 0deg);
+  }
+}
+
+.search-container:hover {
+  animation: hoverShake 0.15s linear 3;
+}
+
+.fade {
+  position: relative;
+  width: 100%;
+  min-height: 30vh;
+  top: 10px;
+  background-image: linear-gradient(0deg, transparent, black 75%);
+  z-index: 1;
+}
+
+.star-wars {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 800px;
+  color: #feda4a;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  perspective: 400px;
+  text-align: justify;
+}
+
+.crawl {
+  position: relative;
+  top: 9999px;
+  transform-origin: 50% 100%;
+  animation: crawl 60s linear;
+}
+
+.crawl > .title {
+  font-size: 90%;
+  text-align: center;
+}
+
+.crawl > .title h1 {
+  margin: 0 0 100px;
+  text-transform: uppercase;
+}
+
+@keyframes crawl {
+  0% {
+    top: 0;
+    transform: rotateX(20deg) translateZ(0);
+  }
+  100% {
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px);
+  }
 }
