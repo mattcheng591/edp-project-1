@@ -175,3 +175,58 @@ section#films a:hover {
   background-color: var(--accent1);
   color: var(--light1);
 }
+
+.search-container {
+  background: #000; /* Black background */
+  height: 30px;
+  border-radius: 30px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.8s;
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3),
+    -4px -4px 6px 0 rgba(255, 255, 136, 0.2),
+    /* Yellow-ish shadow for Star Wars feel */ inset -4px -4px 6px 0
+      rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.search-container:hover > .search-input {
+  width: 400px;
+}
+
+.search-container .search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 0px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.8s;
+  color: #f9f600; /* Yellow text color for the input */
+}
+
+.search-container .search-btn .fas {
+  color: #f9f600; /* Yellow icon */
+}
+
+@keyframes hoverShake {
+  0% {
+    transform: skew(0deg, 0deg);
+  }
+  25% {
+    transform: skew(5deg, 5deg);
+  }
+  75% {
+    transform: skew(-5deg, -5deg);
+  }
+  100% {
+    transform: skew(0deg, 0deg);
+  }
+}
+
+.search-container:hover {
+  animation: hoverShake 0.15s linear 3;
+}

@@ -24,11 +24,25 @@
         >Who you looking for?
         <span class="small">(Regular expressions are cool here)</span></label
       >
-      <input
+      <div class="search-container">
+        <input
+          type="text"
+          name="search"
+          placeholder="Search..."
+          class="search-input"
+          oninput="filterCharacters()"
+          autocomplete="off"
+          id="searchString"
+        />
+        <a href="#" class="search-btn">
+          <i class="fas fa-search"></i>
+        </a>
+      </div>
+      <!-- <input
         id="searchString"
         oninput="filterCharacters()"
         autocomplete="off"
-      />
+      /> -->
     </div>
     <section id="charactersList"></section>
   </body>
